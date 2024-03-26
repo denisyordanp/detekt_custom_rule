@@ -4,14 +4,14 @@ import io.gitlab.arturbosch.detekt.api.Config
 import io.gitlab.arturbosch.detekt.api.RuleSet
 import io.gitlab.arturbosch.detekt.api.RuleSetProvider
 
-class MyRuleSetProvider : RuleSetProvider {
-    override val ruleSetId: String = "enum_value_rule"
+class MaverickDetektRuleSetProvider : RuleSetProvider {
+    override val ruleSetId: String = "maverick"
 
     override fun instance(config: Config): RuleSet {
         return RuleSet(
             ruleSetId,
             listOf(
-                EnumValueSnakeCaseNaming(config),
+                EnumValueFormat(config),
             ),
         )
     }
